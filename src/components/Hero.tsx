@@ -80,27 +80,7 @@ export function Hero() {
         </div>
       </div>
 
-      <Marquee />
     </section>
   );
 }
 
-function Marquee() {
-  const items = [
-    "TypeScript", "Rust", "Go", "React", "Next.js", "Postgres",
-    "GraphQL", "Kubernetes", "AWS", "Design Systems", "DX", "Observability",
-  ];
-  const row = [...items, ...items];
-  return (
-    <div className="absolute bottom-0 inset-x-0 border-y border-border bg-background/60 backdrop-blur-sm overflow-hidden">
-      <div className="flex w-max animate-marquee py-5">
-        {row.map((t, i) => (
-          <div key={i} className="flex items-center gap-8 px-8 font-display text-2xl md:text-4xl whitespace-nowrap">
-            <span className="text-foreground/80">{t}</span>
-            <span className="text-lime">✦</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
