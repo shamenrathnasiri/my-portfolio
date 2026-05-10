@@ -34,10 +34,10 @@ export function Contact() {
           className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <a
-            href="mailto:hi@ari.dev"
+            href="mailto:hello@bhanukashamen.me"
             className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-lime text-lime-foreground font-mono text-sm uppercase tracking-widest font-semibold hover:scale-105 transition-transform"
           >
-            hi@ari.dev
+            hello@bhanukashamen.me
             <span className="transition-transform group-hover:translate-x-1">→</span>
           </a>
           <a
@@ -50,7 +50,7 @@ export function Contact() {
         </motion.div>
 
         <div className="mt-20 flex flex-wrap justify-center gap-8 font-mono text-xs uppercase tracking-widest text-muted-foreground">
-          {["GitHub", "LinkedIn", "Twitter", "Read.cv", "Bluesky"].map((s) => (
+          {["GitHub", "LinkedIn", "Twitter"].map((s) => (
             <a key={s} href="#" className="hover:text-foreground transition-colors">
               {s} ↗
             </a>
@@ -60,8 +60,8 @@ export function Contact() {
 
       <footer className="relative mt-32 border-t border-border">
         <div className="mx-auto max-w-7xl px-6 lg:px-10 py-8 flex flex-col md:flex-row justify-between gap-4 font-mono text-xs uppercase tracking-widest text-muted-foreground">
-          <span>© 2026 Ari Solène — All rights reserved</span>
-          <span>Hand-coded in Lisbon · Lit by lime</span>
+          <span>© 2026 Bhanuka Shamen — All rights reserved</span>
+          <span>Built with care · bhanukashamen.me</span>
         </div>
       </footer>
     </section>

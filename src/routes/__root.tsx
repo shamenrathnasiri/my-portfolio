@@ -10,9 +10,9 @@ import {
 
 import appCss from "../styles.css?url";
 
-const siteTitle = "Ari Solène — Software Engineer Portfolio";
+const siteTitle = "Bhanuka Shamen — Full-Stack Developer";
 const siteDescription =
-  "Senior software engineer crafting fast, accessible products at the intersection of design systems and distributed backends.";
+  "Full-stack developer building modern web applications. Visit bhanukashamen.me for portfolio, projects, and contact.";
 const siteIcon =
   "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23161410'/%3E%3Ccircle cx='32' cy='32' r='16' fill='%23c7f464'/%3E%3Cpath d='M24 38L32 22l8 16' stroke='%23161410' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E";
 
@@ -80,7 +80,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: siteTitle },
       { name: "description", content: siteDescription },
-      { name: "author", content: "Ari Solène" },
+      { name: "author", content: "Bhanuka Shamen" },
       { property: "og:title", content: siteTitle },
       { property: "og:description", content: siteDescription },
       { property: "og:type", content: "website" },

@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { SectionHeading } from "./Work";
 
 const stats = [
-  { k: "09", v: "Years shipping production code" },
-  { k: "40+", v: "Products touched" },
-  { k: "18k", v: "GitHub stars across OSS" },
-  { k: "∞", v: "Cups of single-origin coffee" },
+  { k: "5+", v: "Years in web development" },
+  { k: "20+", v: "Projects completed" },
+  { k: "100%", v: "Dedication to quality" },
+  { k: "∞", v: "Love for coding" },
 ];
 
 export function About() {
@@ -23,19 +23,17 @@ export function About() {
             className="md:col-span-7 space-y-6 text-lg text-muted-foreground leading-relaxed"
           >
             <p>
-              I write software that other engineers actually want to use.
-              That means clean abstractions, fast feedback loops, and tooling
-              that doesn't fight you at 2 a.m.
+              I build full-stack applications with a focus on user experience and clean code.
+              I believe in solving real problems with elegant, maintainable solutions.
             </p>
             <p>
-              Lately I'm obsessed with the seam between{" "}
-              <span className="text-foreground">developer experience</span> and{" "}
-              <span className="text-foreground">product polish</span> — the
-              last 10% that turns a good app into one people quietly love.
+              I'm passionate about learning new technologies and staying current with industry trends.
+              My focus is on building applications that are both <span className="text-foreground">fast</span> and{" "}
+              <span className="text-foreground">intuitive</span>.
             </p>
             <p>
-              When I'm offline you'll find me brewing pour-overs, tinkering
-              with synthesizers, or losing badly at chess in a Lisbon café.
+              When not coding, I enjoy contributing to open-source projects, learning new frameworks,
+              and collaborating with other developers in the tech community.
             </p>
           </motion.div>
 

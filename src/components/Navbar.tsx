@@ -31,7 +31,7 @@ export function Navbar() {
       <nav className="mx-auto max-w-7xl px-6 lg:px-10 h-16 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-2 font-display font-bold text-lg">
           <span className="inline-block size-2.5 rounded-full bg-lime animate-pulse" />
-          ari<span className="text-lime">.</span>dev
+          bhanuka<span className="text-lime">.</span>dev
         </a>
         <ul className="hidden md:flex items-center gap-1 font-mono text-xs uppercase tracking-widest">
           {links.map((l) => (
