@@ -2,11 +2,11 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const links = [
-  { href: "#work", label: "Work" },
-  { href: "#projects", label: "Projects" },
-  { href: "#experience", label: "Journey" },
+  { href: "#about", label: "About me" },
   { href: "#education", label: "Education" },
+  { href: "#experience", label: "Journy" },
   { href: "#stack", label: "Stack" },
+  { href: "#projects", label: "Projects" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -46,10 +46,10 @@ export function Navbar() {
           ))}
         </ul>
         <a
-          href="#contact"
+          href="#download-cv"
           className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-lime text-lime-foreground font-mono text-xs uppercase tracking-widest font-semibold hover:scale-105 transition-transform"
         >
-          Let's talk →
+          Download CV →
         </a>
       </nav>
     </motion.header>

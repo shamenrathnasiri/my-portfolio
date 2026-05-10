@@ -28,12 +28,11 @@ function Index() {
     <main className="relative min-h-screen bg-background text-foreground">
       <Navbar />
       <Hero />
-      <Work />
-      <Projects />
-      <Experience />
       <About />
       <Education />
+      <Experience />
       <Stack />
+      <Projects />
       <Contact />
     </main>
   );

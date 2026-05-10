@@ -4,7 +4,7 @@ export function Contact() {
   return (
     <section id="contact" className="relative py-32 md:py-48 border-t border-border overflow-hidden">
       <div className="absolute inset-0 grid-bg opacity-50 pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[600px] rounded-full bg-lime/20 blur-3xl animate-blob pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-150 rounded-full bg-lime/20 blur-3xl animate-blob pointer-events-none" />
 
       <div className="relative mx-auto max-w-5xl px-6 lg:px-10 text-center">
         <motion.p
@@ -41,6 +41,7 @@ export function Contact() {
             <span className="transition-transform group-hover:translate-x-1">→</span>
           </a>
           <a
+            id="download-cv"
             href="#"
             className="inline-flex items-center gap-3 px-8 py-4 rounded-full border border-border font-mono text-sm uppercase tracking-widest hover:bg-secondary transition-colors"
           >
