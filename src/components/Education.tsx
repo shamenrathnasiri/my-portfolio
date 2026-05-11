@@ -1,10 +1,10 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+﻿import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { SectionHeading } from "./Work";
 
 const education = [
   {
-    year: "2013 — 2017",
+    year: "2013 â€” 2017",
     degree: "B.Sc. Computer Science",
     school: "University of Porto",
     location: "Porto, Portugal",
@@ -29,7 +29,7 @@ const education = [
   },
   {
     year: "2022",
-    degree: "AWS Solutions Architect — Pro",
+    degree: "AWS Solutions Architect â€” Pro",
     school: "Amazon Web Services",
     location: "Remote",
     detail: "Designing resilient, cost-optimized systems at scale.",
@@ -55,14 +55,11 @@ export function Education() {
         style={{ y }}
         className="absolute right-6 md:right-20 top-20 text-7xl md:text-9xl opacity-10 pointer-events-none select-none"
       >
-        🎓
+        ðŸŽ“
       </motion.div>
 
       <div ref={ref} className="relative mx-auto max-w-7xl px-6 lg:px-10">
-        <SectionHeading
-          kicker="04 / Education"
-          title="Where the foundations were poured."
-        />
+        <SectionHeading kicker="04 / Education" title="Where the foundations were poured." />
 
         <div className="mt-20 grid md:grid-cols-2 gap-8 md:gap-x-16 md:gap-y-20">
           {education.map((e, i) => (
@@ -74,13 +71,7 @@ export function Education() {
   );
 }
 
-function DiplomaCard({
-  edu,
-  index,
-}: {
-  edu: (typeof education)[number];
-  index: number;
-}) {
+function DiplomaCard({ edu, index }: { edu: (typeof education)[number]; index: number }) {
   const tilt = index % 2 === 0 ? -2 : 2;
   return (
     <motion.div
@@ -117,7 +108,7 @@ function DiplomaCard({
 
         <div className="mt-2 flex items-center gap-2 text-sm">
           <span className="font-medium">{edu.school}</span>
-          <span className="text-muted-foreground">·</span>
+          <span className="text-muted-foreground">Â·</span>
           <span className="text-muted-foreground">{edu.location}</span>
         </div>
 

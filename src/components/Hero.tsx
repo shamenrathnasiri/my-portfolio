@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+﻿import { motion } from "framer-motion";
 import { Github, Linkedin, Mail } from "lucide-react";
 
 export function Hero() {
@@ -27,7 +27,7 @@ export function Hero() {
           transition={{ delay: 0.3 }}
           className="mt-6 font-mono text-sm md:text-base uppercase tracking-widest text-muted-foreground"
         >
-          Hello, World — I'm
+          Hello, World â€” I'm
         </motion.p>
 
         <h1 className="mt-4 font-display font-bold leading-tight tracking-tighter text-[clamp(2.5rem,10vw,5.5rem)]">
@@ -53,7 +53,7 @@ export function Hero() {
               key={role}
               className="px-4 py-2 rounded-full border border-lime text-lime font-mono text-xs uppercase tracking-widest"
             >
-              • {role}
+              â€¢ {role}
             </div>
           ))}
         </motion.div>
@@ -67,7 +67,7 @@ export function Hero() {
         >
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed text-balance">
             Software Engineer Intern and Computer Science undergraduate at{" "}
-            <span className="text-lime">Eastern University, Sri Lanka</span> — passionate about
+            <span className="text-lime">Eastern University, Sri Lanka</span> â€” passionate about
             Full-Stack Development and UI/UX Design. Skilled in{" "}
             <span className="text-foreground">React</span>,{" "}
             <span className="text-foreground">Angular</span>,{" "}
@@ -92,13 +92,17 @@ export function Hero() {
             Get in Touch
           </a>
           <a
-            href="#"
+            href="https://github.com/shamenrathnasiri?tab=overview&from=2024-10-01&to=2024-10-31"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center size-12 rounded-full border-2 border-lime text-lime hover:bg-lime/10 transition-colors"
           >
             <Github className="size-5" />
           </a>
           <a
-            href="#"
+            href="https://www.linkedin.com/in/bhanuka-shamen-859183288/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center size-12 rounded-full border-2 border-lime text-lime hover:bg-lime/10 transition-colors"
           >
             <Linkedin className="size-5" />
@@ -108,4 +112,3 @@ export function Hero() {
     </section>
   );
 }
-

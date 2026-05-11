@@ -1,4 +1,4 @@
-import { motion, useInView } from "framer-motion";
+﻿import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { SectionHeading } from "./Work";
 
@@ -47,9 +47,7 @@ function SkillBar({
     <div className="space-y-3">
       <div className="flex items-baseline justify-between">
         <div className="flex items-baseline gap-3">
-          <span className="font-display text-xl md:text-2xl font-semibold">
-            {skill.name}
-          </span>
+          <span className="font-display text-xl md:text-2xl font-semibold">{skill.name}</span>
           <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
             {skill.group}
           </span>
@@ -73,7 +71,7 @@ function SkillBar({
             delay: 0.1 + index * 0.08,
             ease: [0.22, 1, 0.36, 1],
           }}
-          className="absolute inset-y-0 left-0 rounded-full bg-gradient-to-r from-lime/70 to-lime"
+          className="absolute inset-y-0 left-0 rounded-full bg-linear-to-r from-lime/70 to-lime"
         >
           <span className="absolute right-0 top-1/2 -translate-y-1/2 size-2.5 rounded-full bg-lime shadow-[0_0_12px_var(--lime)]" />
         </motion.div>
@@ -82,15 +80,7 @@ function SkillBar({
   );
 }
 
-function Counter({
-  value,
-  inView,
-  delay,
-}: {
-  value: number;
-  inView: boolean;
-  delay: number;
-}) {
+function Counter({ value, inView, delay }: { value: number; inView: boolean; delay: number }) {
   const ref = useRef<HTMLSpanElement>(null);
 
   if (typeof window !== "undefined" && inView && ref.current) {
@@ -100,15 +90,7 @@ function Counter({
   return <CounterImpl value={value} inView={inView} delay={delay} />;
 }
 
-function CounterImpl({
-  value,
-  inView,
-  delay,
-}: {
-  value: number;
-  inView: boolean;
-  delay: number;
-}) {
+function CounterImpl({ value, inView, delay }: { value: number; inView: boolean; delay: number }) {
   const spanRef = useRef<HTMLSpanElement>(null);
 
   useAnimatedNumber(spanRef, value, inView, delay);

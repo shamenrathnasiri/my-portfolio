@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+﻿import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { SectionHeading } from "./Work";
 
@@ -58,10 +58,7 @@ export function Experience() {
       <div className="absolute inset-0 grid-bg opacity-40 pointer-events-none" />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
-        <SectionHeading
-          kicker="03 / Experience"
-          title="The route — from zero to now."
-        />
+        <SectionHeading kicker="03 / Experience" title="The route â€” from zero to now." />
 
         <div ref={ref} className="relative mt-20">
           {/* The animated map path */}
@@ -101,13 +98,7 @@ export function Experience() {
   );
 }
 
-function Stop({
-  stop,
-  index,
-}: {
-  stop: (typeof journey)[number];
-  index: number;
-}) {
+function Stop({ stop, index }: { stop: (typeof journey)[number]; index: number }) {
   const left = index % 2 === 0;
   return (
     <motion.li
@@ -143,9 +134,7 @@ function Stop({
 
       {/* Card */}
       <div
-        className={`md:col-span-1 ${
-          left ? "md:pr-20 md:text-right" : "md:pl-20 md:col-start-2"
-        }`}
+        className={`md:col-span-1 ${left ? "md:pr-20 md:text-right" : "md:pl-20 md:col-start-2"}`}
       >
         <div className="font-mono text-xs uppercase tracking-[0.3em] text-lime mb-2 flex items-center gap-2 md:justify-start">
           {left && <span className="hidden md:inline ml-auto">{stop.year}</span>}
@@ -161,7 +150,7 @@ function Stop({
           {stop.role}
         </h3>
         <p className="mt-1 text-muted-foreground">
-          {stop.company} · <span className="text-foreground/70">{stop.location}</span>
+          {stop.company} Â· <span className="text-foreground/70">{stop.location}</span>
         </p>
         <p className="mt-3 text-sm text-muted-foreground max-w-sm md:max-w-none md:inline-block">
           {stop.blurb}

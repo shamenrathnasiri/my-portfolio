@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+﻿import { motion } from "framer-motion";
 
 const projects = [
   {
@@ -38,7 +38,7 @@ const projects = [
     role: "Backend Eng",
     tags: ["Go", "Postgres", "gRPC"],
     blurb:
-      "Re-architected the core ledger to handle 10× transaction volume with zero downtime migration. Sleeps soundly at night.",
+      "Re-architected the core ledger to handle 10Ã— transaction volume with zero downtime migration. Sleeps soundly at night.",
     color: "oklch(0.78 0.16 200)",
   },
 ];
@@ -59,7 +59,7 @@ export function Work() {
   );
 }
 
-function ProjectRow({ project, index }: { project: typeof projects[number]; index: number }) {
+function ProjectRow({ project, index }: { project: (typeof projects)[number]; index: number }) {
   return (
     <motion.a
       href="#"
@@ -70,13 +70,15 @@ function ProjectRow({ project, index }: { project: typeof projects[number]; inde
       className="group relative block py-8 md:py-10"
     >
       <div className="grid grid-cols-12 gap-6 items-baseline">
-        <div className="col-span-2 md:col-span-1 font-mono text-xs text-muted-foreground">{project.n}</div>
+        <div className="col-span-2 md:col-span-1 font-mono text-xs text-muted-foreground">
+          {project.n}
+        </div>
         <div className="col-span-10 md:col-span-5">
           <h3 className="font-display text-3xl md:text-5xl font-semibold tracking-tight transition-transform duration-500 group-hover:translate-x-2">
             {project.title}
           </h3>
           <p className="mt-1 text-sm text-muted-foreground font-mono uppercase tracking-widest">
-            {project.role} · {project.year}
+            {project.role} Â· {project.year}
           </p>
         </div>
         <p className="col-span-12 md:col-span-4 text-muted-foreground text-balance">
@@ -84,10 +86,7 @@ function ProjectRow({ project, index }: { project: typeof projects[number]; inde
         </p>
         <div className="col-span-12 md:col-span-2 flex md:justify-end gap-2 flex-wrap">
           {project.tags.map((t) => (
-            <span
-              key={t}
-              className="px-3 py-1 rounded-full border border-border text-xs font-mono"
-            >
+            <span key={t} className="px-3 py-1 rounded-full border border-border text-xs font-mono">
               {t}
             </span>
           ))}
@@ -99,7 +98,7 @@ function ProjectRow({ project, index }: { project: typeof projects[number]; inde
         style={{ color: project.color }}
         initial={false}
       >
-        →
+        â†’
       </motion.span>
     </motion.a>
   );
