@@ -4,40 +4,50 @@ import { SectionHeading } from "./Work";
 
 const journey = [
   {
-    year: "2017",
-    role: "Junior Developer",
-    company: "Pixelboat Studio",
-    location: "Porto, PT",
-    blurb: "First commit to production. Learned to ship, learned to debug at 2am.",
+    year: "Aug 2021 - Jan 2022",
+    role: "Bank Assistant (Trainee)",
+    company: "Regional Development Bank",
+    location: "Manampitiya, Sri Lanka",
+    employmentType: "Full-time",
+    blurb:
+      "Assisted in daily banking operations including customer service, account handling, and transaction processing.",
+    extraDetails: [
+      "Supported staff with opening new customer accounts and verifying required documentation.",
+      "Handled cash deposits, withdrawals, and basic teller activities under supervision.",
+      "Maintained accurate records and updated customer information in the banking system.",
+      "Gained hands-on experience with core banking software and office automation tools.",
+    ],
   },
   {
-    year: "2019",
-    role: "Frontend Engineer",
-    company: "Mosaic Labs",
-    location: "Berlin, DE",
-    blurb: "Owned the rebuild of a 2M-user dashboard. Discovered design systems.",
+    year: "Aug 2025 - Feb 2026",
+    role: "Intern Software Engineer",
+    company: "Cybernetic Technologies Pvt. Ltd.",
+    location: "Battaramulla, Sri Lanka",
+    employmentType: "Full-time / Onsite",
+    blurb:
+      "Built scalable full-stack features using React.js, Next.js, Angular, Laravel, Node.js, and supporting backend services.",
+    extraDetails: [
+      "Designed and developed modular, reusable UI components with clean and maintainable code.",
+      "Optimized application performance and UX by improving rendering logic and applying best practices for SEO and accessibility.",
+      "Integrated RESTful APIs using Axios, Fetch API, Laravel controllers, Express routes, and Flask endpoints.",
+      "Strengthened knowledge of state management (Redux, Context API) and databases (MySQL, MongoDB).",
+    ],
   },
   {
-    year: "2021",
-    role: "Senior Engineer",
-    company: "Voya Banking",
-    location: "Amsterdam, NL",
-    blurb: "Re-architected the core ledger. Mentored 6 engineers across 2 squads.",
-  },
-  {
-    year: "2024",
-    role: "Tech Lead",
-    company: "Lumen Analytics",
+    year: "2026 - Present",
+    role: "Freelancer Fullstack Developer",
+    company: "Self-Employed",
     location: "Remote",
-    blurb: "Built a realtime query engine from scratch. Hired the founding team.",
-  },
-  {
-    year: "2026",
-    role: "Staff Engineer",
-    company: "Northwave",
-    location: "Lisbon, PT",
     current: true,
-    blurb: "Leading platform & DX. Currently obsessed with the last 10%.",
+    employmentType: "Freelance / Remote",
+    blurb:
+      "Building modern full-stack web applications for clients with a focus on performance, clean UI, and maintainable architecture.",
+    extraDetails: [
+      "Develop reusable frontend interfaces with React, Next.js, and Tailwind CSS.",
+      "Create backend services and APIs using Node.js, Laravel, and RESTful architecture.",
+      "Integrate third-party services, databases, and authentication flows based on project needs.",
+      "Deliver responsive, accessible, and production-ready solutions end to end.",
+    ],
   },
 ];
 
@@ -58,7 +68,7 @@ export function Experience() {
       <div className="absolute inset-0 grid-bg opacity-40 pointer-events-none" />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
-        <SectionHeading kicker="03 / Experience" title="The route â€” from zero to now." />
+        <SectionHeading kicker="03 / Experience" title="The route — from zero to now." />
 
         <div ref={ref} className="relative mt-20">
           {/* The animated map path */}
@@ -150,11 +160,26 @@ function Stop({ stop, index }: { stop: (typeof journey)[number]; index: number }
           {stop.role}
         </h3>
         <p className="mt-1 text-muted-foreground">
-          {stop.company} Â· <span className="text-foreground/70">{stop.location}</span>
+          {stop.company} <span className="text-foreground/70">{stop.location}</span>
         </p>
         <p className="mt-3 text-sm text-muted-foreground max-w-sm md:max-w-none md:inline-block">
           {stop.blurb}
         </p>
+        {stop.extraDetails && (
+          <ul className="mt-4 space-y-2 text-sm text-muted-foreground max-w-sm md:max-w-none">
+            {stop.extraDetails.map((detail) => (
+              <li key={detail} className="flex gap-3">
+                <span className="mt-2 size-1.5 shrink-0 rounded-full bg-lime" />
+                <span>{detail}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+        {stop.employmentType && (
+          <p className="mt-4 text-xs uppercase tracking-[0.25em] text-muted-foreground/80">
+            {stop.employmentType}
+          </p>
+        )}
       </div>
 
       {/* Spacer for alternating layout */}
