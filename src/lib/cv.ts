@@ -1,0 +1,1 @@
+export const cvDownloadUrl = new URL("../CV/Bhanuka SE 2026.pdf", import.meta.url).href;

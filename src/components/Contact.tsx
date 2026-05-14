@@ -1,4 +1,5 @@
 ﻿import { motion } from "framer-motion";
+import { cvDownloadUrl } from "../lib/cv";
 
 export function Contact() {
   return (
@@ -45,7 +46,8 @@ export function Contact() {
           </a>
           <a
             id="download-cv"
-            href="mailto:shamenrathnasiri@gmail.com?subject=Resume%20Request"
+            href={cvDownloadUrl}
+            download="Bhanuka-SE-2026.pdf"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 rounded-full border border-border font-mono text-xs sm:text-sm uppercase tracking-widest hover:bg-secondary transition-colors"
           >
             Download CV

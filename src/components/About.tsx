@@ -12,6 +12,7 @@ import {
   ServerCog,
 } from "lucide-react";
 import profileImage from "../assets/My.png";
+import { cvDownloadUrl } from "../lib/cv";
 import { SectionHeading } from "./Work";
 
 const personalDetails = [
@@ -212,7 +213,8 @@ export function About() {
 
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
-                  href="mailto:shamenrathnasiri@gmail.com?subject=Resume%20Request"
+                  href={cvDownloadUrl}
+                  download="Bhanuka-SE-2026.pdf"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-lime px-6 py-3 font-mono text-xs font-semibold uppercase tracking-widest text-lime-foreground transition-transform hover:scale-[1.02]"
                 >
                   <ArrowDownToLine className="size-4" />
