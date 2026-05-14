@@ -197,15 +197,15 @@ export function About() {
 
               <div className="space-y-4 text-sm sm:text-base md:text-lg leading-relaxed text-muted-foreground max-w-3xl">
                 <p>
-                  I&apos;m Bhanuka Shamen, a Software Engineer from Polonnaruwa, Sri Lanka. I&apos;m currently
-                  studying at Eastern University in Sri Lanka, and I&apos;m passionate about turning ideas
-                  into clean, useful, and visually refined digital products that feel good to use.
+                  {
+                    "I'm Bhanuka Shamen, a Software Engineer from Polonnaruwa, Sri Lanka. I'm a student at Eastern University. I build clean, useful, visually refined digital products."
+                  }
                 </p>
                 <p>
-                  My work sits at the intersection of development and design. I enjoy building
+                  My work sits at the intersection of development and design. I enjoy creating
                   interfaces that are simple to understand, fast to interact with, and strong in
                   visual identity. Whether I&apos;m shaping a landing page, refining a user flow, or
-                  helping a project feel more polished, I focus on details that improve both the
+                  helping a project feel more polished, I focus on the details that improve the
                   experience and the final result.
                 </p>
               </div>
