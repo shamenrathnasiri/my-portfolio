@@ -63,17 +63,17 @@ export function Experience() {
   return (
     <section
       id="experience"
-      className="relative py-32 md:py-40 border-t border-border overflow-hidden"
+      className="relative py-12 sm:py-16 md:py-24 lg:py-32 border-t border-border overflow-hidden"
     >
       <div className="absolute inset-0 grid-bg opacity-40 pointer-events-none" />
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
-        <SectionHeading kicker="03 / Experience" title="The route — from zero to now." />
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
+        <SectionHeading kicker="03 / Experience" title="The route - from zero to now." />
 
-        <div ref={ref} className="relative mt-20">
+        <div ref={ref} className="relative mt-12 sm:mt-16 md:mt-20">
           {/* The animated map path */}
           <svg
-            className="absolute left-4 md:left-1/2 top-0 h-full w-24 md:w-[60%] md:-translate-x-1/2 pointer-events-none"
+            className="absolute left-2 sm:left-4 md:left-1/2 top-0 h-full w-20 sm:w-24 md:w-[60%] md:-translate-x-1/2 pointer-events-none"
             viewBox="0 0 600 1000"
             preserveAspectRatio="none"
             fill="none"
@@ -97,7 +97,7 @@ export function Experience() {
             />
           </svg>
 
-          <ol className="relative space-y-16 md:space-y-28">
+          <ol className="relative space-y-12 sm:space-y-16 md:space-y-28">
             {journey.map((stop, i) => (
               <Stop key={stop.year} stop={stop} index={i} />
             ))}
@@ -116,13 +116,13 @@ function Stop({ stop, index }: { stop: (typeof journey)[number]; index: number }
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.6, delay: 0.1 }}
-      className={`relative grid grid-cols-[40px_1fr] md:grid-cols-2 gap-4 md:gap-16 items-center ${
+      className={`relative grid grid-cols-[32px_1fr] sm:grid-cols-[40px_1fr] md:grid-cols-2 gap-3 sm:gap-4 md:gap-16 items-start md:items-center ${
         left ? "" : "md:[&>*:first-child]:order-2"
       }`}
     >
       {/* Pin */}
       <div
-        className={`relative md:absolute md:left-1/2 md:-translate-x-1/2 md:top-1/2 md:-translate-y-1/2 z-10 size-10 grid place-items-center`}
+        className={`relative md:absolute md:left-1/2 md:-translate-x-1/2 md:top-1/2 md:-translate-y-1/2 z-10 size-8 sm:size-10 grid place-items-center shrink-0 mt-1`}
       >
         <motion.span
           initial={{ scale: 0 }}
@@ -134,7 +134,7 @@ function Stop({ stop, index }: { stop: (typeof journey)[number]; index: number }
           }`}
         />
         <span
-          className={`relative size-4 rounded-full border-2 ${
+          className={`relative size-3 sm:size-4 rounded-full border-2 ${
             stop.current
               ? "bg-lime border-lime shadow-[0_0_16px_var(--lime)]"
               : "bg-background border-foreground"
@@ -146,37 +146,40 @@ function Stop({ stop, index }: { stop: (typeof journey)[number]; index: number }
       <div
         className={`md:col-span-1 ${left ? "md:pr-20 md:text-right" : "md:pl-20 md:col-start-2"}`}
       >
-        <div className="font-mono text-xs uppercase tracking-[0.3em] text-lime mb-2 flex items-center gap-2 md:justify-start">
-          {left && <span className="hidden md:inline ml-auto">{stop.year}</span>}
-          {!left && <span>{stop.year}</span>}
+        <div className="font-mono text-[9px] sm:text-xs uppercase tracking-[0.3em] text-lime mb-2 flex items-center gap-2 md:justify-start flex-wrap">
+          <span className="hidden md:inline" style={{ marginLeft: left ? "auto" : "0" }}>
+            {stop.year}
+          </span>
+          <span className="md:hidden">{stop.year}</span>
           {stop.current && (
-            <span className="px-2 py-0.5 rounded-full bg-lime text-lime-foreground text-[9px]">
+            <span className="px-2 py-0.5 rounded-full bg-lime text-lime-foreground text-[8px] sm:text-[9px]">
               NOW
             </span>
           )}
-          {left && <span className="md:hidden">{stop.year}</span>}
         </div>
-        <h3 className="font-display text-2xl md:text-3xl font-semibold tracking-tight">
+        <h3 className="font-display text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold tracking-tight">
           {stop.role}
         </h3>
-        <p className="mt-1 text-muted-foreground">
-          {stop.company} <span className="text-foreground/70">{stop.location}</span>
+        <p className="mt-1 text-sm text-muted-foreground flex flex-col sm:flex-row sm:items-center sm:gap-2">
+          <span className="font-medium">{stop.company}</span>
+          <span className="hidden sm:inline text-foreground/70">·</span>
+          <span className="text-foreground/70 text-xs sm:text-sm">{stop.location}</span>
         </p>
-        <p className="mt-3 text-sm text-muted-foreground max-w-sm md:max-w-none md:inline-block">
+        <p className="mt-2 sm:mt-3 text-xs sm:text-sm text-muted-foreground max-w-sm md:max-w-none">
           {stop.blurb}
         </p>
         {stop.extraDetails && (
-          <ul className="mt-4 space-y-2 text-sm text-muted-foreground max-w-sm md:max-w-none">
+          <ul className="mt-3 sm:mt-4 space-y-1.5 sm:space-y-2 text-xs sm:text-sm text-muted-foreground max-w-sm md:max-w-none">
             {stop.extraDetails.map((detail) => (
-              <li key={detail} className="flex gap-3">
-                <span className="mt-2 size-1.5 shrink-0 rounded-full bg-lime" />
+              <li key={detail} className="flex gap-2 sm:gap-3">
+                <span className="mt-1.5 sm:mt-2 size-1 sm:size-1.5 shrink-0 rounded-full bg-lime" />
                 <span>{detail}</span>
               </li>
             ))}
           </ul>
         )}
         {stop.employmentType && (
-          <p className="mt-4 text-xs uppercase tracking-[0.25em] text-muted-foreground/80">
+          <p className="mt-3 sm:mt-4 text-[8px] sm:text-xs uppercase tracking-[0.25em] text-muted-foreground/80">
             {stop.employmentType}
           </p>
         )}
