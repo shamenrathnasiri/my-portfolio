@@ -45,11 +45,11 @@ const projects = [
 
 export function Work() {
   return (
-    <section id="work" className="relative py-32 md:py-40">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+    <section id="work" className="relative py-12 sm:py-16 md:py-24 lg:py-32">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
         <SectionHeading kicker="01 / Selected work" title="Things I've shipped" />
 
-        <div className="mt-16 divide-y divide-border border-y border-border">
+        <div className="mt-8 sm:mt-12 md:mt-16 divide-y divide-border border-y border-border">
           {projects.map((p, i) => (
             <ProjectRow key={p.n} project={p} index={i} />
           ))}
@@ -67,26 +67,26 @@ function ProjectRow({ project, index }: { project: (typeof projects)[number]; in
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.5, delay: index * 0.05 }}
-      className="group relative block py-8 md:py-10"
+      className="group relative block py-6 sm:py-8 md:py-10"
     >
-      <div className="grid grid-cols-12 gap-6 items-baseline">
-        <div className="col-span-2 md:col-span-1 font-mono text-xs text-muted-foreground">
+      <div className="grid grid-cols-12 gap-3 sm:gap-4 md:gap-6 items-baseline">
+        <div className="col-span-1 md:col-span-1 font-mono text-xs text-muted-foreground">
           {project.n}
         </div>
-        <div className="col-span-10 md:col-span-5">
-          <h3 className="font-display text-3xl md:text-5xl font-semibold tracking-tight transition-transform duration-500 group-hover:translate-x-2">
+        <div className="col-span-11 md:col-span-5">
+          <h3 className="font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold tracking-tight transition-transform duration-500 group-hover:translate-x-2">
             {project.title}
           </h3>
-          <p className="mt-1 text-sm text-muted-foreground font-mono uppercase tracking-widest">
+          <p className="mt-0.5 sm:mt-1 text-xs sm:text-sm text-muted-foreground font-mono uppercase tracking-widest">
             {project.role} Â· {project.year}
           </p>
         </div>
-        <p className="col-span-12 md:col-span-4 text-muted-foreground text-balance">
+        <p className="col-span-12 md:col-span-4 text-xs sm:text-sm text-muted-foreground text-balance">
           {project.blurb}
         </p>
         <div className="col-span-12 md:col-span-2 flex md:justify-end gap-2 flex-wrap">
           {project.tags.map((t) => (
-            <span key={t} className="px-3 py-1 rounded-full border border-border text-xs font-mono">
+            <span key={t} className="px-2 sm:px-3 py-0.5 sm:py-1 rounded-full border border-border text-[9px] sm:text-xs font-mono">
               {t}
             </span>
           ))}
@@ -94,7 +94,7 @@ function ProjectRow({ project, index }: { project: (typeof projects)[number]; in
       </div>
       <motion.span
         aria-hidden
-        className="absolute right-0 -top-2 md:top-4 text-7xl md:text-9xl font-display font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+        className="absolute right-0 -top-2 md:top-4 text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-display font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
         style={{ color: project.color }}
         initial={false}
       >
