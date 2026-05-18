@@ -4,6 +4,7 @@ import { Github } from "lucide-react";
 import { SectionHeading } from "./Work";
 import p1 from "../assets/autopart website.png";
 import p2 from "../assets/cabana haven booking.png";
+import abcLogo from "../assets/LOGO.png";
 
 const websitesProjects = [
   {
@@ -56,6 +57,51 @@ export function Projects() {
           {websitesProjects.map((p, i) => (
             <ProjectCard key={p.title} p={p} i={i} />
           ))}
+        </div>
+        {/* Graphic design showcase */}
+        <div className="mt-12">
+          <div className="max-w-3xl mx-auto rounded-2xl border border-border bg-background/30 p-6">
+            <div className="flex flex-col sm:flex-row items-start gap-6">
+              <div className="flex-shrink-0 w-40 h-40 flex items-center justify-center rounded-lg bg-background/10 border border-border overflow-hidden">
+                <img
+                  src={abcLogo}
+                  alt="ABC Graphics logo"
+                  className="max-w-full max-h-full object-contain"
+                />
+              </div>
+
+              <div className="flex-1">
+                <h3 className="font-display text-2xl font-semibold tracking-tight text-foreground">
+                  Graphic Design & Branding
+                </h3>
+                <p className="mt-2 text-sm text-foreground/90">
+                  I create logos, social media graphics, marketing collaterals, and full brand
+                  identities. Explore my visual portfolio and follow my Facebook page for recent
+                  work and updates.
+                </p>
+
+                <div className="mt-4 flex flex-wrap gap-3">
+                  <a
+                    href="https://www.abcgraphics.lk"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-lime text-lime-foreground text-sm font-semibold"
+                  >
+                    Visit ABC Graphics
+                  </a>
+
+                  <a
+                    href="https://www.facebook.com/profile.php?id=100095599507570"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-background/70 text-foreground text-sm"
+                  >
+                    Facebook Page
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
