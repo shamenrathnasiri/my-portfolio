@@ -1,9 +1,10 @@
-﻿import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useState } from "react";
-import { Github } from "lucide-react";
+import { Facebook, Github, Globe } from "lucide-react";
 import { SectionHeading } from "./Work";
 import p1 from "../assets/autopart website.png";
 import p2 from "../assets/cabana haven booking.png";
+import graphicLogo from "../assets/My.png";
 
 const websitesProjects = [
   {
@@ -31,6 +32,20 @@ const websitesProjects = [
   },
 ];
 
+const graphicDesignProjects = [
+  {
+    image: graphicLogo,
+    title: "Graphic Design Showcase",
+    category: "Graphic Design",
+    year: "2026",
+    description:
+      "Creative branding, social media, and visual presentation work tailored for business and personal identity projects.",
+    tags: ["Branding", "Social Media", "Visual Design"],
+    website: "https://www.behance.net/bhanukashamen",
+    facebook: "https://web.facebook.com/bhanuka.shamen.5/",
+  },
+];
+
 type Project = {
   image?: string;
   title: string;
@@ -41,6 +56,8 @@ type Project = {
   href?: string;
   repo?: string;
   backendRepo?: string;
+  website?: string;
+  facebook?: string;
 };
 
 export function Projects() {
@@ -56,6 +73,17 @@ export function Projects() {
           {websitesProjects.map((p, i) => (
             <ProjectCard key={p.title} p={p} i={i} />
           ))}
+        </div>
+
+        <div className="mt-8 sm:mt-12 md:mt-16">
+          <h3 className="font-display text-2xl sm:text-3xl font-semibold tracking-tight">
+            Graphic Design
+          </h3>
+          <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+            {graphicDesignProjects.map((p, i) => (
+              <ProjectCard key={p.title} p={p} i={i} />
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -149,6 +177,28 @@ function ProjectCard({ p, i }: { p: Project; i: number }) {
                   <Github className="size-4" />
                 </a>
               )}
+              {p.website && (
+                <a
+                  href={p.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center size-9 rounded-full border border-border bg-background/70 text-foreground hover:text-lime transition-colors"
+                  aria-label="View website"
+                >
+                  <Globe className="size-4" />
+                </a>
+              )}
+              {p.facebook && (
+                <a
+                  href={p.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center size-9 rounded-full border border-border bg-background/70 text-foreground hover:text-lime transition-colors"
+                  aria-label="View Facebook page"
+                >
+                  <Facebook className="size-4" />
+                </a>
+              )}
             </div>
           </div>
         </div>
@@ -201,6 +251,28 @@ function ProjectCard({ p, i }: { p: Project; i: number }) {
                         aria-label="View backend repository"
                       >
                         <Github className="size-3.5" />
+                      </a>
+                    )}
+                    {p.website && (
+                      <a
+                        href={p.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center size-8 rounded-full border border-border text-foreground hover:text-lime transition-colors"
+                        aria-label="View website"
+                      >
+                        <Globe className="size-3.5" />
+                      </a>
+                    )}
+                    {p.facebook && (
+                      <a
+                        href={p.facebook}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center size-8 rounded-full border border-border text-foreground hover:text-lime transition-colors"
+                        aria-label="View Facebook page"
+                      >
+                        <Facebook className="size-3.5" />
                       </a>
                     )}
                   </div>
