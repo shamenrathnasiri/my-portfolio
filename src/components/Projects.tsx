@@ -3,18 +3,31 @@ import { useState } from "react";
 import { Github } from "lucide-react";
 import { SectionHeading } from "./Work";
 import p1 from "../assets/autopart website.png";
+import p2 from "../assets/cabana haven booking.png";
 
 const websitesProjects = [
   {
     image: p1,
     title: "Auto Parts Showcase",
     category: "Website",
-    year: "2024",
+    year: "2026",
     description:
       "Vehicle spare-parts company showcase built with React + TypeScript and Tailwind CSS. Includes responsive layouts, product galleries, and marketing pages.",
     tags: ["React", "TypeScript", "Tailwind CSS"],
     href: "https://auto-parts-showcase.vercel.app/",
     repo: "https://github.com/shamenrathnasiri/auto-parts-showcase",
+  },
+  {
+    image: p2,
+    title: "Cabana Haven",
+    category: "Full Stack Resort Platform",
+    year: "2025",
+    description:
+      "A modern full-stack resort booking platform built with React, TypeScript, and Laravel 12, featuring a responsive user interface, secure REST API, room reservation management, admin dashboard, authentication system, booking analytics, and optimized performance. The platform includes real-time booking workflows, accessible UI components, data validation, and scalable backend architecture using Laravel Sanctum, MySQL, and modern frontend technologies such as Tailwind CSS, TanStack Query, and shadcn/ui.",
+    tags: ["React", "TypeScript", "Laravel 12", "Sanctum", "TanStack Query"],
+    href: "https://cabana-haven-design.vercel.app/",
+    repo: "https://github.com/shamenrathnasiri/cabana-haven-design",
+    backendRepo: "https://github.com/shamenrathnasiri/cabana-haven-backend",
   },
 ];
 
@@ -27,6 +40,7 @@ type Project = {
   tags: string[];
   href?: string;
   repo?: string;
+  backendRepo?: string;
 };
 
 export function Projects() {
@@ -118,25 +132,26 @@ function ProjectCard({ p, i }: { p: Project; i: number }) {
                   href={p.repo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background/70 text-xs font-semibold text-foreground"
+                  className="inline-flex items-center justify-center size-9 rounded-full border border-border bg-background/70 text-foreground hover:text-lime transition-colors"
+                  aria-label="View frontend repository"
                 >
-                  Repo
+                  <Github className="size-4" />
+                </a>
+              )}
+              {p.backendRepo && (
+                <a
+                  href={p.backendRepo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center size-9 rounded-full border border-border bg-background/70 text-foreground hover:text-lime transition-colors"
+                  aria-label="View backend repository"
+                >
+                  <Github className="size-4" />
                 </a>
               )}
             </div>
           </div>
         </div>
-
-        <button
-          onClick={(e) => {
-            e.preventDefault();
-            setShowDetails(true);
-          }}
-          title="Show details"
-          className="absolute top-3 left-3 z-20 inline-flex items-center justify-center rounded-full bg-background/70 border border-border p-2 text-muted-foreground hover:text-foreground transition-colors"
-        >
-          <Github className="size-4" />
-        </button>
 
         {showDetails && (
           <div className="absolute inset-0 z-30 flex items-center justify-center p-6">
@@ -171,9 +186,21 @@ function ProjectCard({ p, i }: { p: Project; i: number }) {
                         href={p.repo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="px-3 py-1 rounded-full border border-border text-xs font-semibold"
+                        className="inline-flex items-center justify-center size-8 rounded-full border border-border text-foreground hover:text-lime transition-colors"
+                        aria-label="View frontend repository"
                       >
-                        GitHub
+                        <Github className="size-3.5" />
+                      </a>
+                    )}
+                    {p.backendRepo && (
+                      <a
+                        href={p.backendRepo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center size-8 rounded-full border border-border text-foreground hover:text-lime transition-colors"
+                        aria-label="View backend repository"
+                      >
+                        <Github className="size-3.5" />
                       </a>
                     )}
                   </div>
@@ -189,10 +216,6 @@ function ProjectCard({ p, i }: { p: Project; i: number }) {
             </div>
           </div>
         )}
-
-        <div className="absolute top-2 sm:top-3 md:top-4 right-2 sm:right-3 md:right-4 size-8 sm:size-10 rounded-full bg-lime text-lime-foreground grid place-items-center text-sm sm:text-lg opacity-0 group-hover:opacity-100 -translate-y-2 group-hover:translate-y-0 transition-all duration-500">
-          â†’
-        </div>
       </div>
     </motion.a>
   );
