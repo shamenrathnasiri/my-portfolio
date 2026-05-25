@@ -5,6 +5,7 @@ import { Facebook, Github, Globe } from "lucide-react";
 import { SectionHeading } from "./Work";
 import p1 from "../assets/autopart website.png";
 import p2 from "../assets/cabana haven booking.png";
+import p3 from "../assets/Patient management system.png";
 import abcLogo from "../assets/LOGO.png";
 
 const websitesProjects = [
@@ -30,6 +31,16 @@ const websitesProjects = [
     href: "https://cabana-haven-design.vercel.app/",
     repo: "https://github.com/shamenrathnasiri/cabana-haven-design",
     backendRepo: "https://github.com/shamenrathnasiri/cabana-haven-backend",
+  },
+  {
+    image: p3,
+    title: "Inhouse Patient Management System",
+    category: "Full Stack Healthcare Platform",
+    year: "2025",
+    description:
+      "A full-stack healthcare management system for private hospitals with role-based access for doctors, nurses, and attendants. Includes patient registration, treatment updates, PDF report generation, secure authentication, and real-time chat.",
+    tags: ["React", "Flask", "MySQL", "Python", "JavaScript"],
+    repo: "https://github.com/shamenrathnasiri/Inhouse-patient-management-system-for-private-hospitals",
   },
 ];
 
