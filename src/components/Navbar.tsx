@@ -80,7 +80,7 @@ export function Navbar() {
           ))}
         </ul>
         <div className="flex items-center gap-4">
-          <ul className="hidden md:flex items-center gap-2">
+          <ul className="hidden md:flex items-center gap-4">
             {socials.map((s) => (
               <li key={s.href}>
                 <a

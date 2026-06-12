@@ -6,6 +6,7 @@ import { SectionHeading } from "./Work";
 import p1 from "../assets/autopart website.png";
 import p2 from "../assets/cabana haven booking.png";
 import p3 from "../assets/Patient management system.png";
+import p4 from "../assets/Inventory management system .png";
 import abcLogo from "../assets/LOGO.png";
 
 const websitesProjects = [
@@ -42,6 +43,17 @@ const websitesProjects = [
     tags: ["React", "Flask", "MySQL", "Python", "JavaScript"],
     repo: "https://github.com/shamenrathnasiri/Inhouse-patient-management-system-for-private-hospitals",
   },
+  {
+    image: p4,
+    title: "Inventory Management System",
+    category: "Full Stack Inventory Solution",
+    year: "2025",
+    description:
+      "A comprehensive full-stack system enabling multi-warehouse stock tracking, order management, and real-time analytics. It features role-based access control, interactive dashboards, queue-based exports, and advanced PDF/Excel reporting for streamlined operations.",
+    tags: ["React 19", "Vite", "Tailwind CSS", "Laravel 12", "MySQL"],
+    repo: "https://github.com/shamenrathnasiri/Inventory-management-System-Frontend",
+    backendRepo: "https://github.com/shamenrathnasiri/Inventory-management-System-Backend",
+  },  
 ];
 
 type Project = {
