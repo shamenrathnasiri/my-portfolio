@@ -34,19 +34,35 @@ const journey = [
     ],
   },
   {
-    year: "2026 - Present",
-    role: "Freelancer Fullstack Developer",
+    year: "Jul 2026 - Present",
+    role: "IT Support Assistant",
+    company: "Araliya Packaging Lanka Pvt Ltd",
+    location: "Polonnaruwa, Sri Lanka",
+    current: true,
+    employmentType: "Full-time / Onsite",
+    blurb:
+      "Supporting internal users with daily IT operations, troubleshooting, and device or system setup.",
+    extraDetails: [
+      "Helped resolve hardware, software, and basic network issues for staff.",
+      "Assisted with workstation setup, maintenance, and user support requests.",
+      "Supported smooth day-to-day operations by responding quickly to technical issues.",
+      "Improved problem-solving skills in a real business environment.",
+    ],
+  },
+  {
+    year: "2024 - Present",
+    role: "Freelancer Web Developer & Graphic Designer",
     company: "Self-Employed",
     location: "Remote",
     current: true,
     employmentType: "Freelance / Remote",
     blurb:
-      "Building modern full-stack web applications for clients with a focus on performance, clean UI, and maintainable architecture.",
+      "Building responsive websites and visual design work for clients with a focus on clean UI and practical delivery.",
     extraDetails: [
-      "Develop reusable frontend interfaces with React, Next.js, and Tailwind CSS.",
-      "Create backend services and APIs using Node.js, Laravel, and RESTful architecture.",
-      "Integrate third-party services, databases, and authentication flows based on project needs.",
-      "Deliver responsive, accessible, and production-ready solutions end to end.",
+      "Design and develop responsive websites with React, Next.js, Tailwind CSS, and modern UI patterns.",
+      "Create logos, social media creatives, banners, and brand visuals for client projects.",
+      "Work with clients remotely to turn briefs into polished web and design outputs.",
+      "Deliver accessible, mobile-friendly, and production-ready results end to end.",
     ],
   },
 ];

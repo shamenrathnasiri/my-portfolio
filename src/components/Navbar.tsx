@@ -1,8 +1,16 @@
 ﻿import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { Facebook, Github, Linkedin } from "lucide-react";
+import { Facebook, Github, Linkedin, Menu } from "lucide-react";
 import { SiBehance } from "react-icons/si";
 import { cvDownloadUrl } from "../lib/cv";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 const links = [
   { href: "#about", label: "About me" },
@@ -54,7 +62,7 @@ export function Navbar() {
         scrolled ? "backdrop-blur-xl bg-background/70 border-b border-border" : ""
       }`}
     >
-      <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10 h-14 sm:h-16 flex items-center justify-between">
+      <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10 h-14 sm:h-16 flex items-center justify-between gap-4">
         <a
           href="#top"
           className="flex items-center gap-2 font-display font-bold text-sm sm:text-base md:text-lg"
@@ -67,6 +75,67 @@ export function Navbar() {
             bh<span className="text-lime">.</span>dev
           </span>
         </a>
+        <Sheet>
+          <SheetTrigger asChild>
+            <button
+              type="button"
+              className="md:hidden inline-flex items-center justify-center size-10 rounded-full border border-border bg-background/80 text-foreground transition-colors hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime"
+              aria-label="Open navigation menu"
+            >
+              <Menu className="size-5" />
+            </button>
+          </SheetTrigger>
+
+          <SheetContent side="right" className="w-[88vw] max-w-sm px-5 py-6 sm:px-6">
+            <SheetHeader className="text-left">
+              <SheetTitle className="font-display text-2xl">Navigation</SheetTitle>
+              <p className="text-sm text-muted-foreground">
+                Quick links to the main sections of the portfolio.
+              </p>
+            </SheetHeader>
+
+            <div className="mt-8 space-y-3">
+              {links.map((link) => (
+                <SheetClose asChild key={link.href}>
+                  <a
+                    href={link.href}
+                    className="block rounded-2xl border border-border bg-card/40 px-4 py-3 font-mono text-sm uppercase tracking-widest text-foreground transition-colors hover:bg-secondary"
+                  >
+                    {link.label}
+                  </a>
+                </SheetClose>
+              ))}
+            </div>
+
+            <div className="mt-6 grid grid-cols-2 gap-3">
+              {socials.map((social) => (
+                <a
+                  key={social.href}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
+                  className="inline-flex items-center justify-center gap-2 rounded-2xl border border-border bg-background px-4 py-3 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+                >
+                  {social.svg}
+                  <span className="font-mono text-[10px] uppercase tracking-widest">
+                    {social.label}
+                  </span>
+                </a>
+              ))}
+            </div>
+
+            <SheetClose asChild>
+              <a
+                href={cvDownloadUrl}
+                download="Bhanuka-SE-2026.pdf"
+                className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-lime px-4 py-3 font-mono text-xs font-semibold uppercase tracking-widest text-lime-foreground transition-transform hover:scale-[1.01]"
+              >
+                Download My CV
+              </a>
+            </SheetClose>
+          </SheetContent>
+        </Sheet>
         <ul className="hidden md:flex items-center gap-1 font-mono text-xs uppercase tracking-widest">
           {links.map((l) => (
             <li key={l.href}>
